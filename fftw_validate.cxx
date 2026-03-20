@@ -2,6 +2,8 @@
 #include <stddef.h>
 #include <math.h>
 #include <assert.h>
+#include <stdint.h>
+#include <cstdlib>
 
 #include "fftw3.h"
 
@@ -874,7 +876,7 @@ void runDFTTest(int size)
 	double *outD = dft.IDFT(freqD);
 
 	char fileName[512];
-	snprintf(fileName, 512, "/Users/bonez/Development/tmp/dft_macos_%d.csv", size);
+	snprintf(fileName, 512, "D:\\Development\\DSD\\fftw-test\\fftw_validate\\win_vs2022_release\\dft_win_vs2022_release_%d.csv", size);
 	FILE *fout = fopen(fileName, "w");
 	assert(fout != NULL);
 	fprintf(fout, "idx,inA,freqA.R,freqA.I,outA,freqB.R,freqB.I,outB,freqC.R,freqC.I,outC,freqD.R,freqD.I,outD,diffB,diffC,diffD\n");
